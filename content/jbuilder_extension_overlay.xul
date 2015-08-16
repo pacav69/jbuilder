@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE overlay PUBLIC "-//MOZILLA//DTD XUL V1.0//EN" "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<overlay id="jbuilder_extension_Overlay"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <commandset id="allcommands">
+    <command id="Tasks:HelloWorld" oncommand="alert('Hello World from jbuilder_extension');"/>
+  </commandset>
+
+
+	<menubar id="menubar_main">
+		<menu id="webtools" label="JTools" insertafter="helpMenu">
+			<menupopup>
+				<menuitem id="info" label="About Joomla Tools …"
+						  oncommand="window.openDialog('chrome://jbuilder_extension/content/info/info.xul','Info','chrome,centerscreen,modal');"
+					class="menuitem-iconic" image="chrome://jbuilder_extension/skin/images/icon-information.png"/>
+
+				<menuseparator />
+				<menuitem id="koprefs" label="Quick Web Setup" oncommand="doit(event);"
+					class="menuitem-iconic" image="chrome://jbuilder_extension/skin/images/icon-preferences.png"/>
+
+			</menupopup>
+		</menu>
+	</menubar>
+
+</overlay>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/"?>
+<?xml-stylesheet href="chrome://jbuilder_extension/content/info/info.css" type="text/css"?>
+
+<?xul-overlay href="chrome://jbuilder_extension/content/info/about.xul"?>
+<?xul-overlay href="chrome://jbuilder_extension/content/info/basic.xul"?>
+<!--<?xul-overlay href="chrome://jbuilder_extension/content/info/lists.xul"?>-->
+<!--<?xul-overlay href="chrome://jbuilder_extension/content/info/tables.xul"?>-->
+<!--<?xul-overlay href="chrome://jbuilder_extension/content/info/others.xul"?>-->
+<!--<?xul-overlay href="chrome://jbuilder_extension/content/info/text.xul"?>-->
+<!--<?xul-overlay href="chrome://jbuilder_extension/content/info/document.xul"?>-->
+<!--<?xul-overlay href="chrome://jbuilder_extension/content/info/structure.xul">?-->
+<!--<?xul-overlay href="chrome://jbuilder_extension/content/info/cssp.xul"?>-->
+<!--<?xul-overlay href="chrome://jbuilder_extension/content/info/html-templates.xul"?>-->
+<!--<?xul-overlay href="chrome://jbuilder_extension/content/info/beautify.xul"?>-->
+<?xul-overlay href="chrome://jbuilder_extension/content/info/setup.xul"?>
+<!--<?xul-overlay href="chrome://jbuilder_extension/content/info/fixes.xul"?>-->
+
+<?xml-stylesheet type="text/css" href="data:text/css,
+
+" ?><dialog id="info"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+    title="About Joomla Tools"
+    buttons="accept"
+    onload="initInfo();">
+
+	<html:h1>Joomla Tools</html:h1>
+	<tabbox id="tablist">
+		<tabs id="info-tabs"/>
+		<tabpanels id="info-panels"/>
+	</tabbox>
+
+	<script>//<![CDATA[
+		var ko=window.opener.ko;
+		function initInfo() {
+			var i,l;
+			var links=document.getElementsByClassName('link');
+			for(i=0,l=links.length;i<l;i++) links[i].onclick=openUrl;
+		}
+		function openUrl() {
+			ko.browse.openUrlInDefaultBrowser(this.textContent);
+		}
+	//]]></script>
+
+
+</dialog>

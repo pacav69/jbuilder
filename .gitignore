@@ -4,3 +4,7 @@
 *.komodoproject
 
 build*
+
+.x_pi
+
+*.xpi

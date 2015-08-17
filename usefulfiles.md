@@ -16,4 +16,8 @@ http://www.activestate.com/blog/2007/01/adding-new-languages-komodo-udl
 
 http://www.iconarchive.com
 
+http://docs.activestate.com/komodo/9.2/full_toc.html
+
 http://docs.activestate.com/komodo/9.2/extensions.html
+
+http://docs.activestate.com/komodo/9.2/komodo-js-api.html

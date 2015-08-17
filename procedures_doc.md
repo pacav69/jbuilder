@@ -1,5 +1,15 @@
 #  Procedures for Joomla builder (jbuilder)
 
+## About menu
+
+describes informationon what is jbuilder
+work flow details
+macros
+components
+joomla
+user prefs
+
+
 ## Startup page
 
 After install jbuilder

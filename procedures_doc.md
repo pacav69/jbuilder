@@ -45,6 +45,7 @@ a dialog box to select from templates directory
 * modify manifest file
 
 ## Check for joomla coding standards
+this perform a check to ensure coding conforms to joomla coding standard
 
 ## Setup local server
 

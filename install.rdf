@@ -3,14 +3,13 @@
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
     <Description about="urn:mozilla:install-manifest">
         <em:id>jbuilder_extension@silverpcgroup.com</em:id>
-        <em:name>jbuilder_extension</em:name>
+        <em:name>Joomla Builder</em:name>
         <em:version>0.1</em:version>
-        <em:description>Joomla Builder</em:description>
+		<em:unpack>true</em:unpack>
+        <em:description>Joomla Builder extension</em:description>
         <em:creator>pacav69</em:creator>
         <em:homepageURL>http://silverpcgroup.com/jbuilder_extension</em:homepageURL>
-		<em:iconURL>chrome://jbuilder_extension/skin/images/extensiondev.png</em:iconURL>
-
-
+		<em:iconURL>chrome://jbuilder_extension/skin/images/Hammericon48.png</em:iconURL>
         <em:type>2</em:type> <!-- type=extension -->
 
         <em:targetApplication>

@@ -41,6 +41,9 @@
 /*	Support Functions
 	================================================ */
 
+// TODO: remove before production
+window.openDialog("chrome://global/content/console.xul", "_blank");
+
 	function getCWD() {
 		return ko.projects.manager.currentProject.liveDirectory;
 	}
@@ -83,56 +86,56 @@
 
 		switch(event.target.id) {
 				case 'koprefs':
-					window.openDialog('chrome://html-tools/content/dialog/koPrefs.xul','Web Preferences','chrome,centerscreen,modal',parms);
+					window.openDialog('chrome://jbuilder_extension/content/dialog/koPrefs.xul','Web Preferences','chrome,centerscreen,modal',parms);
 					if(parms.out) setKOPrefs(parms.out);
 					break;
 
 				case 'entabulate':
-					window.openDialog('chrome://html-tools/content/dialog/entabulate.xul','Entabulate','chrome,centerscreen,modal',parms);
+					window.openDialog('chrome://jbuilder_extension/content/dialog/entabulate.xul','Entabulate','chrome,centerscreen,modal',parms);
 					break;
 				case 'html5':
-					window.openDialog('chrome://html-tools/content/dialog/html5.xul','Convert to HTML5','chrome,centerscreen,modal',parms);
+					window.openDialog('chrome://jbuilder_extension/content/dialog/html5.xul','Convert to HTML5','chrome,centerscreen,modal',parms);
 					if(editor && parms.out)	makeHTML5(parms.out,eol);
 					break;
 				case 'cssp':
-					//	window.openDialog('chrome://html-tools/content/dialog/html5.xul','Convert to HTML5','chrome,centerscreen,modal',parms);
+					//	window.openDialog('chrome://jbuilder_extension/content/dialog/html5.xul','Convert to HTML5','chrome,centerscreen,modal',parms);
 					if(editor) CSSP();
 				case 'html-template':
-					//	window.openDialog('chrome://html-tools/content/dialog/html5.xul','Convert to HTML5','chrome,centerscreen,modal',parms);
+					//	window.openDialog('chrome://jbuilder_extension/content/dialog/html5.xul','Convert to HTML5','chrome,centerscreen,modal',parms);
 					if(editor) HTMLTemplate();
 					break;
 
 				case 'css-colour':
-					window.openDialog('chrome://html-tools/content/dialog/css-colour.xul','CSS Colours','chrome,centerscreen,modal',parms);
+					window.openDialog('chrome://jbuilder_extension/content/dialog/css-colour.xul','CSS Colours','chrome,centerscreen,modal',parms);
 					if(editor && parms.out)		editor.insertText(editor.currentPos,parms.out.colour,eol);
 					break;
 			//	HTML
 				case 'html-structure':
-					window.openDialog('chrome://html-tools/content/dialog/html-structure.xul','Generate HTML Structure','chrome,centerscreen,modal',parms);
+					window.openDialog('chrome://jbuilder_extension/content/dialog/html-structure.xul','Generate HTML Structure','chrome,centerscreen,modal',parms);
 					if(editor && parms.out)		editor.replaceSel(makeHTMLStructure(editor.selText,parms.out,eol));
 					break;
 				case 'webtools-makeParagraphs':
-					window.openDialog('chrome://html-tools/content/dialog/html-paragraphs.xul','Convert to Paragraphs','chrome,centerscreen,modal',parms);
+					window.openDialog('chrome://jbuilder_extension/content/dialog/html-paragraphs.xul','Convert to Paragraphs','chrome,centerscreen,modal',parms);
 					if(editor && parms.out)		editor.replaceSel(makeParagraphs(editor.selText,parms.out,eol));
 					break;
 				case 'webtools-makeHeading':
-					window.openDialog('chrome://html-tools/content/dialog/html-headings.xul','Convert to Heading','chrome,centerscreen,modal',parms);
+					window.openDialog('chrome://jbuilder_extension/content/dialog/html-headings.xul','Convert to Heading','chrome,centerscreen,modal',parms);
 					if(editor && parms.out)		editor.replaceSel(makeHeading(editor.selText,parms.out,eol));
 					break;
 				case 'webtools-makeHeadingParagraphs':
-					window.openDialog('chrome://html-tools/content/dialog/html-headings-paragraphs.xul','Convert to Headings &amp; Paragraphs','chrome,centerscreen,modal',parms);
+					window.openDialog('chrome://jbuilder_extension/content/dialog/html-headings-paragraphs.xul','Convert to Headings &amp; Paragraphs','chrome,centerscreen,modal',parms);
 					if(editor && parms.out)		editor.replaceSel(makeHeadingsParagraphs(editor.selText,parms.out,eol));
 					break;
 
 			//	HTML Lists
 				case 'webtools-makeList':
-					window.openDialog('chrome://html-tools/content/dialog/html-lists.xul','Convert to List','chrome,centerscreen,modal',parms);
+					window.openDialog('chrome://jbuilder_extension/content/dialog/html-lists.xul','Convert to List','chrome,centerscreen,modal',parms);
 					if(editor && parms.out)		editor.replaceSel(makeList(editor.selText,parms.out,eol));
 					break;
 
 			//	HTML Containers
 				case 'webtools-makeTable':
-					window.openDialog('chrome://html-tools/content/dialog/html-tables.xul','Convert to Table','chrome,centerscreen,modal',parms);
+					window.openDialog('chrome://jbuilder_extension/content/dialog/html-tables.xul','Convert to Table','chrome,centerscreen,modal',parms);
 
 					if(editor && parms.out) {
 						result=makeTable(editor.selText,parms.out,eol);
@@ -143,21 +146,21 @@
 
 				case 'webtools-addLocalImage':
 					parms={ inn: { cwd: cwd }, out: null };
-					window.openDialog('chrome://html-tools/content/dialog/html-image.xul','Make Image','chrome,centerscreen,modal',parms);
+					window.openDialog('chrome://jbuilder_extension/content/dialog/html-image.xul','Make Image','chrome,centerscreen,modal',parms);
 					if(editor && parms.out)		editor.insertText(editor.currentPos,addImage(parms.out),eol);
 					break;
 				case 'webtools-addLink':
 					parms={ inn: { cwd: cwd }, out: null };
-					window.openDialog('chrome://html-tools/content/dialog/html-link.xul','Add Link','chrome,centerscreen,modal',parms);
+					window.openDialog('chrome://jbuilder_extension/content/dialog/html-link.xul','Add Link','chrome,centerscreen,modal',parms);
 					if(editor && parms.out)		editor.insertText(editor.currentPos,addLink(parms.out),eol);
 					break;
 				case 'webtools-addAnchor':
 					parms={ inn: { cwd: cwd }, out: null };
-					window.openDialog('chrome://html-tools/content/dialog/html-anchor.xul','Add Anchor','chrome,centerscreen,modal',parms);
+					window.openDialog('chrome://jbuilder_extension/content/dialog/html-anchor.xul','Add Anchor','chrome,centerscreen,modal',parms);
 					if(editor && parms.out)		editor.insertText(editor.currentPos,addAnchor(parms.out),eol);
 					break;
 				case 'webtools-makeAnchors':
-					window.openDialog('chrome://html-tools/content/dialog/html-anchors.xul','Make Anchors','chrome,centerscreen,modal',parms);
+					window.openDialog('chrome://jbuilder_extension/content/dialog/html-anchors.xul','Make Anchors','chrome,centerscreen,modal',parms);
 					if(editor && parms.out)		editor.replaceSel(makeAnchors(editor.selText,parms.out,eol));
 					break;
 
@@ -166,7 +169,7 @@
 					parms={ inn:{element:'span'}, out:null };
 					/*	falls through */
 				case 'webtools-wrap':
-					window.openDialog('chrome://html-tools/content/dialog/html-wrap.xul','Wrap Element around Selection','chrome,centerscreen,modal',parms);
+					window.openDialog('chrome://jbuilder_extension/content/dialog/html-wrap.xul','Wrap Element around Selection','chrome,centerscreen,modal',parms);
 					if(editor && parms.out)		editor.replaceSel(wrapTag(editor.selText,parms.out));
 					break;
 				case 'webtools-untag':

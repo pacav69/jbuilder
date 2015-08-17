@@ -12,6 +12,8 @@
 //	http://community.activestate.com/tags/komodo-preference-set
 
 	================================================================================================================ */
+// TODO: remove before production
+window.openDialog("chrome://global/content/console.xul", "_blank");
 
 	function defaultKOPrefs() {
 		return {

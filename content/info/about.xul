@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+
 <overlay id="singleItemEx"
          xmlns:html="http://www.w3.org/1999/xhtml"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
@@ -9,7 +10,7 @@
 		<tabpanels id="info-panels">
 			<tabpanel id="about">
 				<html:div>
-					<html:p><html:strong>Version</html:strong> 0.1<html:br/>Copyright © Mark Simon</html:p>
+					<html:p><html:strong>Version</html:strong>0.1<html:br/>Copyright © Paul Cavanagh</html:p>
 
 					<html:p>
 						This Addon for Komodo Edit/IDE simplifies some of the processing of hand-coding HTML.<html:br/>

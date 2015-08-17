@@ -10,7 +10,7 @@
 		<tabpanels id="info-panels">
 			<tabpanel id="about">
 				<html:div>
-					<html:p><html:strong>Version</html:strong>0.1<html:br/>Copyright © Paul Cavanagh</html:p>
+					<html:p><html:strong>Version</html:strong> 0.1<html:br/>Copyright © Paul Cavanagh</html:p>
 
 					<html:p>
 						This Addon for Komodo Edit/IDE simplifies some of the processing of hand-coding HTML.<html:br/>

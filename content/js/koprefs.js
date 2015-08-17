@@ -13,7 +13,7 @@
 
 	================================================================================================================ */
 // TODO: remove before production
-window.openDialog("chrome://global/content/console.xul", "_blank");
+// window.openDialog("chrome://global/content/console.xul", "_blank");
 
 	function defaultKOPrefs() {
 		return {

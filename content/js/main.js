@@ -42,7 +42,7 @@
 	================================================ */
 
 // TODO: remove before production
-window.openDialog("chrome://global/content/console.xul", "_blank");
+// window.openDialog("chrome://global/content/console.xul", "_blank");
 
 	function getCWD() {
 		return ko.projects.manager.currentProject.liveDirectory;

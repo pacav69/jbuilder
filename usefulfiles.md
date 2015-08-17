@@ -10,3 +10,4 @@ https://github.com/Komodo/Packages
 http://community.activestate.com/faq/komodo-profile-structure
 http://www.activestate.com/blog/2007/01/adding-new-languages-komodo-udl
 http://www.iconarchive.com
+http://docs.activestate.com/komodo/9.2/extensions.html

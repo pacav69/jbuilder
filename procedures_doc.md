@@ -11,6 +11,7 @@ Startup page includes recent Joomla projects
 
 User selects 'User preferences'
 opens up dialog to first read preferences
+user enters in joomla manifest details such as - user name, email, web site etc
 
 ## Select Create Joomla project
 

@@ -12,7 +12,7 @@
 	<!--<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/htmltools.js" />-->
 	<!--<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/cssp.js" />-->
 	<!--<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/htmltemplate.js" />-->
-	<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/koprefs.js" />
+	<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/jbuilderprefs.js" />
 <!--	<script type="application/x-javascript" src="chrome://jbuilder_extension/content/beautify/js/beautify.js" />-->
 	<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/main.js" />
 
@@ -25,7 +25,7 @@
 					class="menuitem-iconic" image="chrome://jbuilder_extension/skin/images/icon-information.png"/>
 
 				<menuseparator />
-				<menuitem id="koprefs" label="Quick Web Setup" oncommand="doit(event);"
+				<menuitem id="jbuilderprefs" label="JBulder Setup" oncommand="doit(event);"
 					class="menuitem-iconic" image="chrome://jbuilder_extension/skin/images/icon-preferences.png"/>
 
 			</menupopup>

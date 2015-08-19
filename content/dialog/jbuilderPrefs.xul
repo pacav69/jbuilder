@@ -18,110 +18,23 @@
 	>
 <hbox>
 	<groupbox>
-		<groupbox>
-			<caption label="Appearance" />
-			<box>
-				<label control='mruProjectSize' width='96'>Recent Projects</label>
-				<textbox id='mruProjectSize' width="32"/>
-			</box>
-			<box>
-				<label control='mruFileSize' width='96'>Recent Files</label>
-				<textbox id='mruFileSize' width="32"/>
-			</box>
-
-			<checkbox id="show_start_page" label="Show Start Page" value="1"/>
-
-		</groupbox>
 
 		<groupbox>
-			<caption label="Code Intelligence" />
-			<checkbox id="codeintelAutoInsertEndTag" label="HTML End Tags" value="1"/>
-		</groupbox>
-
-		<groupbox>
-			<caption label="Internationalization" />
-			<checkbox id="encodingEnvironment" label="Use OS Encoding" value="0"/>
+			<caption label="User Data" />
 			<box>
-				<label control='encodingDefault' width='96'>Default Encoding</label>
-				<textbox id='encodingDefault' width="48"/>
+				<label control='dataUserNameDefault' width='96'>Default User Name</label>
+				<textbox id='dataUserNameDefault' flex="1" style="min-width: 15em;"/>
+			</box>
+			<box>
+				<label control='dataUserEmailDefault' width='96'>Default User Email</label>
+				<textbox id='dataUserEmailDefault' flex="1" style="min-width: 15em;"/>
 			</box>
 		</groupbox>
-
-		<groupbox>
-			<caption label="Languages" />
-<!--
-			<groupbox>
-				<caption label="Current Languages" />
-				<description id="primaryLanguages" width="300"></description>
-			</groupbox>
--->
-			<checkbox id="setPrimary" label="Use Main Web Languages:" checked="true" value="1"/>
-			<box>
-				<description id="listPrimaryLanguages"></description>
-			</box>
-			<checkbox id="setSecondary" label="More Web Languages:" checked="false" value="1"/>
-			<box>
-				<description id="listSecondaryLanguages"></description>
-			</box>
-		</groupbox>
-<!--
-		<groupbox>
-			<caption label="Places" />
-			<checkbox id="showAllFiles" label="Show All Files" value="1"/>
-		</groupbox>
--->
-<!--		<groupbox>
-			<caption label="Browser Preview" />
-			<menulist id="browser_preview_method">
-			  <menupopup>
-				<menuitem label="Komodo Tab, Other Split View" value="in-tab-other-group" selected="true"/>
-				<menuitem label="Komodo Tab, Same Split View" value="in-tab-same-group"/>
-				<menuitem label="Separate Komodo Dialog" value="in-separate-dialog"/>
-				<menuitem label="Default Browser" value="external"/>
-			  </menupopup>
-			</menulist>
-		</groupbox>
--->
 
 	</groupbox>
 
-	<groupbox>
-		<caption label="Editor" />
-		<groupbox>
-			<checkbox id="showWhitespace" label="Show White Space" value="1"/>
-			<checkbox id="showEOL" label="Show End of Line" value="1"/>
-			<checkbox id="showLineNumbers" label="Show Line Numbers" value="1"/>
-			<checkbox id="editShowMinimap" label="Show MiniMap" value="1"/>
-			<checkbox id="editEnableMouseZoom" label="Enable Mouse Zoom" value="1"/>
-			<groupbox>
-				<caption label="Indentation" />
-				<checkbox id="useTabs" label="Use Tabs" value="1"/>
-				<checkbox id="editElectricBrace" label="Auto Position Closing Brace (?)" value="1"/>
-				<checkbox id="showIndentationGuides" label="Show Indentation Guides" value="1"/>
-				<box>
-					<label control='indentWidth' width='96'>Indent Width</label>
-					<textbox id='indentWidth' width="32"/>
-				</box>
-				<box>
-					<label control='tabWidth' width='96'>Tab Width</label>
-					<textbox id='tabWidth' width="32"/>
-				</box>
-			</groupbox>
-			<groupbox>
-				<caption label="Smart Editing" />
-				<checkbox id="enableAutoAbbreviations" label="Enable Auto Abbreviations" value="1"/>
-			</groupbox>
-			<groupbox>
-				<caption label="Save Options" />
-				<checkbox id="cleanLineEnds" label="Clean Line Endings" value="1"/>
-				<checkbox id="ensureFinalEOL" label="Ensure Final EOL" value="1"/>
-				<box>
-					<label control='autoSaveSeconds'>AutoSave Seconds</label>
-					<textbox id='autoSaveSeconds' width="32"/>
-				</box>
-			</groupbox>
-		</groupbox>
-	</groupbox></hbox>
+</hbox>
+
 	<groupbox>
 		<box>
 			<description id="status"></description>
@@ -191,22 +104,6 @@
 			return thePrefs;
 		}
 
-		function initMore() {
-			currentPrefs=getKOPrefs();
-			setPrefs(currentPrefs);
-//			document.getElementById('primaryLanguages').textContent=getPrimaryLanguages().join('; ');
-			var languages=listPrimaryLanguages();
-			document.getElementById('listPrimaryLanguages').value=languages[0].join(';');
-			document.getElementById('listSecondaryLanguages').value=languages[1].join(';');
-		}
-
-		function getParms() {
-			var thePrefs=getPrefs();
-			thePrefs['setPrimary']=document.getElementById('setPrimary').checked;
-			thePrefs['setSecondary']=document.getElementById('setSecondary').checked;
-//			thePrefs['showAllFiles']=document.getElementById('showAllFiles').checked;
-			return thePrefs;
-		}
  //]]>
 	</script>
 </dialog>

@@ -17,6 +17,10 @@
 
 	function defaultKOPrefs() {
 		return {
+
+			dataUserNameDefault:			{	type: 'string',		value: 'justme'},
+			dataUserEmailDefault:			{	type: 'string',		value: 'myemail@example.com'},
+
 			mruProjectSize:					{	type: 'long',		value: 15 },
 			mruFileSize:					{	type: 'long',		value: 40 },
 			show_start_page:				{	type: 'boolean',	value: 0 },
@@ -60,6 +64,10 @@
 
 //		var langprefs = prefset.getPref('languages');
 		var result = {
+
+			dataUserNameDefault:				{	type: 'string',		value: prefset.getStringPref('dataUserNameDefault')},
+			dataUserEmailDefault:				{	type: 'string',		value: prefset.getStringPref('dataUserEmailDefault')},
+
 			mruProjectSize:					{	type: 'long',		value: prefset.getLongPref('mruProjectSize') },
 			mruFileSize:					{	type: 'long',		value: prefset.getLongPref('mruFileSize')},
 //			show_start_page:				{	type: 'boolean',	value: prefset.getBooleanPref('show_start_page')},
@@ -100,6 +108,12 @@
 		var i;
 		var prefs = Components.classes['@activestate.com/koPrefService;1'].getService(Components.interfaces.koIPrefService).prefs;
 		var prefset = prefs.QueryInterface(Components.interfaces.koIPreferenceSet);
+
+	/*	Data User
+		================================================================================================================ */
+			prefset.setStringPref('dataUserNameDefault',thePrefs['dataUserNameDefault']);	//	dataUserNameDefault
+			prefset.setStringPref('dataUserEmailDefault',thePrefs['dataUserEmailDefault']);	//	dataUserEmailDefault
+
 
 	/*	Key Bindings
 		================================================================================================================ */

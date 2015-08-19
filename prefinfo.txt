@@ -1,0 +1,81 @@
+<preference-set id="filepickers.defaultDirs">
+  <string id="debuggingDir.Look for php.ini file in this directory (-c)">/Applications/joomla-3.4.3-1/php/etc</string>
+  <string id="listbox.pathEditor.add">/Users/silvermac/Documents/komodoproj/jphpbuilsetup</string>
+  <string id="php.iniLocation">/Applications/joomla-3.4.3-1/php/etc</string>
+  <string id="prefWeb.browseForBrowser">/Applications/Google Chrome Canary.app/Contents/MacOS</string>
+</preference-set>
+
+  <string id="cursorColor"></string>
+
+<ordered-preference id="dialog-interpolationquery-Corporation NameMru">
+  <string>SilverPC Group</string>
+  <string>ffffffffff</string>
+  <string>Default</string>
+</ordered-preference>
+
+  <string id="editor-scheme">mycolors2</string>
+
+
+  <string id="find-cwd">/Users/silvermac/Documents/komodoproj/jphpbuilsetup/content/resources</string>
+
+
+ordered-preference id="find-excludeFiletypes">
+  <string>.svn</string>
+  <string>CVS</string>
+  <string>.git</string>
+  <string>.hg</string>
+  <string>.bzr</string>
+  <string>*~</string>
+  <string>svg</string>
+</ordered-preference>
+<ordered-preference id="find-excludeFiletypesMru">
+  <string>.svn:CVS:.git:.hg:.bzr:*~:svg</string>
+  <string>.svn:CVS:.git:.hg:.bzr:*~;svg</string>
+  <string>.svn:CVS:.git:.hg:.bzr:*~</string>
+</ordered-preference>
+
+  <string id="gitExecutable">/Applications/GitHub.app/Contents/MacOS/GitHub</string>
+
+  <string id="gocodeDefaultLocation"></string>
+  <string id="godefDefaultLocation"></string>
+  <string id="golangDefaultLocation"></string>
+  <boolean id="haveInstalledGoFormatter">1</boolean>
+  <boolean id="haveInstalledSampleToolbox-Komodo9.1.0">1</boolean>
+
+
+  <string id="npmDefaultInterpreter">/usr/local/lib/node_modules/npm/bin/npm-cli.js</string>
+  <boolean id="openfiles_show_tab_bar">1</boolean>
+  <string id="phpCommentStyle">//,#</string>
+  <string id="phpConfigFile">/Applications/joomla-3.4.3-1/php/etc/php.ini</string>
+  <string id="phpDefaultInterpreter">/Applications/joomla-3.4.3-1/php/bin/php</string>
+  <string id="phpExtraPaths">/Users/silvermac/Documents/komodoproj/docjoomla</string>
+
+<preference-set id="places">
+  <string id="1">file:///Users/silvermac/Documents/komodoproj/jbuilder</string>
+<preference-set id="current_filter_by_uri">
+
+<preference-set id="Default">
+  <boolean id="builtin">1</boolean>
+  <string id="exclude_matches">*~;#*;CVS;*.bak;*.pyo;*.pyc;.svn;.git;.hg;.bzr;.DS_Store;.komodotools;.tools;__pycache__;hg-checklink-*;hg-checkexec-*</string>
+  <string id="include_matches"></string>
+  <boolean id="readonly">0</boolean>
+  <long id="version">3</long>
+</preference-set>
+
+<preference-set>
+  <boolean id="autopush_on_save">0</boolean>
+  <string id="excludes">*.*~;*.bak;*.tmp;CVS;.#*;*.pyo;*.pyc;.svn;.git;.hg;.bzr;*%25*;tmp*.html;.DS_Store;*.swp;*.kpf;*.komodoproject;.komodotools;__pycache__</string>
+  <string id="id">25cbe347-868c-9642-b941-75ef5e39fdb4</string>
+  <string id="includes"></string>
+  <string id="local_uri">file:///Users/silvermac/Documents/komodoproj/errorpages</string>
+  <string id="name">spc</string>
+  <string id="remote_uri">ftp://spc/public_html</string>
+</preference-set>
+
+  <boolean id="show-getstarted-9.1">0</boolean>
+
+  <string id="templates_open_categories">{u'Samples': True}</string>
+  <string id="templates_selected_category">Web</string>
+  <string id="templates_selected_template_by_category">{u'Web': u'HTML 5', u'Mozilla Development': u'wizard', 'Common': u'Text', u'Samples': u'HTML (4.01)', u'All Languages': u'PHP', u'Samples/HTML5': u'Article', u'Samples/Perl': u'Perl', u'Samples/Python': u'Python', u'Samples/Tcl': u'Tcl', u'My Templates': u'joomlamainpg1'}</string>
+
+  

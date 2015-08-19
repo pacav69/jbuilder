@@ -23,7 +23,8 @@
 				<menuitem id="info" label="About Joomla Tools …"
 						  oncommand="window.openDialog('chrome://jbuilder_extension/content/info/info.xul','Info','chrome,centerscreen,modal');"
 					class="menuitem-iconic" image="chrome://jbuilder_extension/skin/images/icon-information.png"/>
-
+				
+				<!--menuitem name must match name in main.js function doit(event) switch-->
 				<menuseparator />
 				<menuitem id="jbuilderprefs" label="JBulder Setup" oncommand="doit(event);"
 					class="menuitem-iconic" image="chrome://jbuilder_extension/skin/images/icon-preferences.png"/>

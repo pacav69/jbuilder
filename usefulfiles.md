@@ -41,3 +41,9 @@ http://www.koders.com/javascript/fid7B93638BF3D5E6E8BFE1DCD0FBE3A837AA6C2B58.asp
 http://community.activestate.com/node/8422
 
 http://community.activestate.com/tags/komodo-preference-set
+
+https://wiki.mozilla.org/Labs/JS_Modules#Preferences
+
+https://developer.mozilla.org/en-US/Add-ons/SDK/Tools/jpm#Installation
+
+

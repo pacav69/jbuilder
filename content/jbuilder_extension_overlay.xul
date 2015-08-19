@@ -13,17 +13,24 @@
 	<!--<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/cssp.js" />-->
 	<!--<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/htmltemplate.js" />-->
 	<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/jbuilderprefs.js" />
+	<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/koprefs.js" />
+
 <!--	<script type="application/x-javascript" src="chrome://jbuilder_extension/content/beautify/js/beautify.js" />-->
 	<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/main.js" />
 
+<!-- <menu id is a unique name -->
 
 	<menubar id="menubar_main">
-		<menu id="webtools" label="JTools" insertafter="helpMenu">
+		<menu id="jbtools" label="JTools" insertafter="helpMenu">
 			<menupopup>
 				<menuitem id="info" label="About Joomla Tools …"
 						  oncommand="window.openDialog('chrome://jbuilder_extension/content/info/info.xul','Info','chrome,centerscreen,modal');"
 					class="menuitem-iconic" image="chrome://jbuilder_extension/skin/images/icon-information.png"/>
-				
+
+				<!--menuitem name must match name in main.js function doit(event) switch-->
+				<menuseparator />
+				<menuitem id="koprefs" label="KoPrefs Setup" oncommand="doit(event);"
+					class="menuitem-iconic" image="chrome://jbuilder_extension/skin/images/icon-preferences.png"/>
 				<!--menuitem name must match name in main.js function doit(event) switch-->
 				<menuseparator />
 				<menuitem id="jbuilderprefs" label="JBulder Setup" oncommand="doit(event);"

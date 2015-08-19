@@ -85,8 +85,13 @@
 		}
 
 		switch(event.target.id) {
+				case 'koprefs':
+					window.openDialog('chrome://jbuilder_extension/content/dialog/koPrefs.xul','Preferences','chrome,centerscreen,modal',parms);
+					if(parms.out) setKOPrefs(parms.out);
+					break;
+
 				case 'jbuilderprefs':
-					window.openDialog('chrome://jbuilder_extension/content/dialog/jbuilderPrefs.xul','Web Preferences','chrome,centerscreen,modal',parms);
+					window.openDialog('chrome://jbuilder_extension/content/dialog/jbuilderPrefs.xul','Preferences','chrome,centerscreen,modal',parms);
 					if(parms.out) setKOPrefs(parms.out);
 					break;
 

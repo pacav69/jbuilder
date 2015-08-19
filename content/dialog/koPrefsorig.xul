@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin/"?>
 <?xml-stylesheet href="chrome://jbuilder_extension/content/css/dialog.css" type="text/css" ?>
-<?xul-overlay href="chrome://jbuilder_extension/content/dialog/include.xul"?>
-
+<!--<?xul-overlay href="chrome://jbuilder_extension/content/dialog/include.xul"?>
+-->
 <dialog
     id="dialog-prefs"
     title="Quick Web Setup"

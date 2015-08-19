@@ -12,8 +12,6 @@
 //	http://community.activestate.com/tags/komodo-preference-set
 
 	================================================================================================================ */
-// TODO: remove before production
-// window.openDialog("chrome://global/content/console.xul", "_blank");
 
 	function defaultKOPrefs() {
 		return {
@@ -62,7 +60,7 @@
 		var result = {
 			mruProjectSize:					{	type: 'long',		value: prefset.getLongPref('mruProjectSize') },
 			mruFileSize:					{	type: 'long',		value: prefset.getLongPref('mruFileSize')},
-//			show_start_page:				{	type: 'boolean',	value: prefset.getBooleanPref('show_start_page')},
+			show_start_page:				{	type: 'boolean',	value: prefset.getBooleanPref('show_start_page')},
 
 			codeintelAutoInsertEndTag:		{	type: 'boolean',	value: prefset.getBooleanPref('codeintelAutoInsertEndTag')},
 

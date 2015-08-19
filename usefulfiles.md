@@ -46,4 +46,6 @@ https://wiki.mozilla.org/Labs/JS_Modules#Preferences
 
 https://developer.mozilla.org/en-US/Add-ons/SDK/Tools/jpm#Installation
 
+https://github.com/mozilla/app-validator
+
 

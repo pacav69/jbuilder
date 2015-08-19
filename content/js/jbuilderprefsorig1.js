@@ -4,7 +4,7 @@
 //	http://community.activestate.com/faq/komodo-profile-structure
 //	http://community.activestate.com/faq/komodo-file-locations
 //	http://community.activestate.com/faq/getting-setting-komodo-preference
-//	http://svn.openkomodo.com/openkomodo/view/openkomodo/trunk/src/prefs/prefs.p.xml
+//	https://github.com/Komodo/KomodoEdit/blob/master/src/prefs/prefs.p.xml
 //	http://community.activestate.com/forum/where-does-komodo-store-file-preferences
 //	http://grok.openkomodo.com/source/xref/openkomodo/trunk/src/prefs/koIPrefs.idl#114
 //	http://www.koders.com/javascript/fid7B93638BF3D5E6E8BFE1DCD0FBE3A837AA6C2B58.aspx?s=firefox
@@ -18,8 +18,11 @@
 	function defaultKOPrefs() {
 		return {
 
-			dataUserNameDefault:			{	type: 'string',		value: 'justme'},
-			dataUserEmailDefault:			{	type: 'string',		value: 'myemail@example.com'},
+			jbdataUserNameDefault:			{	type: 'string',		value: 'justme'},
+			jbdataUserEmailDefault:			{	type: 'string',		value: 'myemail@example.com'},
+
+			mruProjectSize:					{	type: 'long',		value: 15 },
+			mruFileSize:					{	type: 'long',		value: 40 },
 
 
 		};
@@ -31,8 +34,11 @@
 
 		var result = {
 
-			dataUserNameDefault:				{	type: 'string',		value: prefset.getStringPref('dataUserNameDefault')},
-			dataUserEmailDefault:				{	type: 'string',		value: prefset.getStringPref('dataUserEmailDefault')},
+			jbdataUserNameDefault:				{	type: 'string',		value: prefset.getStringPref('jbdataUserNameDefault')},
+			jbdataUserEmailDefault:				{	type: 'string',		value: prefset.getStringPref('jbdataUserEmailDefault')},
+
+			mruProjectSize:					{	type: 'long',		value: prefset.getLongPref('mruProjectSize') },
+			mruFileSize:					{	type: 'long',		value: prefset.getLongPref('mruFileSize')},
 
 		};
 		return result;
@@ -45,6 +51,12 @@
 
 	/*	Data User
 		================================================================================================================ */
-			prefset.setStringPref('dataUserNameDefault',thePrefs['dataUserNameDefault']);	//	dataUserNameDefault
-			prefset.setStringPref('dataUserEmailDefault',thePrefs['dataUserEmailDefault']);	//	dataUserEmailDefault
+			prefset.setStringPref('jbdataUserNameDefault',thePrefs['jbdataUserNameDefault']);	//	jbdataUserNameDefault
+			prefset.setStringPref('jbdataUserEmailDefault',thePrefs['jbdataUserEmailDefault']);	//	jbdataUserEmailDefault
+
+	/*	Appearance
+		================================================================================================================ */
+
+		prefset.setLongPref('mruProjectSize',thePrefs['mruProjectSize']);		//	Number of Projects
+		prefset.setLongPref('mruFileSize',thePrefs['mruFileSize']);			//	Number of Files
 	}

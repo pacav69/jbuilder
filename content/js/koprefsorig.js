@@ -17,11 +17,6 @@
 
 	function defaultKOPrefs() {
 		return {
-
-
-			jbdataUserNameDefault:			{	type: 'string',		value: 'justme'},
-	//		jbdataUserEmailDefault:			{	type: 'string',		value: 'myemail@example.com'},
-
 			mruProjectSize:					{	type: 'long',		value: 15 },
 			mruFileSize:					{	type: 'long',		value: 40 },
 			show_start_page:				{	type: 'boolean',	value: 0 },
@@ -65,13 +60,9 @@
 
 //		var langprefs = prefset.getPref('languages');
 		var result = {
-
-			jbdataUserNameDefault:				{	type: 'string',		value: prefset.getStringPref('jbdataUserNameDefault')},
-/*			jbdataUserEmailDefault:				{	type: 'string',		value: prefset.getStringPref('jbdataUserEmailDefault')}, */
-
 			mruProjectSize:					{	type: 'long',		value: prefset.getLongPref('mruProjectSize') },
 			mruFileSize:					{	type: 'long',		value: prefset.getLongPref('mruFileSize')},
-//			show_start_page:				{	type: 'boolean',	value: prefset.getBooleanPref('show_start_page')},
+			show_start_page:				{	type: 'boolean',	value: prefset.getBooleanPref('show_start_page')},
 
 			codeintelAutoInsertEndTag:		{	type: 'boolean',	value: prefset.getBooleanPref('codeintelAutoInsertEndTag')},
 
@@ -109,12 +100,6 @@
 		var i;
 		var prefs = Components.classes['@activestate.com/koPrefService;1'].getService(Components.interfaces.koIPrefService).prefs;
 		var prefset = prefs.QueryInterface(Components.interfaces.koIPreferenceSet);
-
-	/*	Data User
-		================================================================================================================ */
-			prefset.setStringPref('jbdataUserNameDefault',thePrefs['jbdataUserNameDefault']);	//	jbdataUserNameDefault
-	/*		prefset.setStringPref('jbdataUserEmailDefault',thePrefs['jbdataUserEmailDefault']);	//	jbdataUserEmailDefault
-
 
 	/*	Key Bindings
 		================================================================================================================ */

@@ -15,8 +15,8 @@
 // TODO: remove before production
 // window.openDialog("chrome://global/content/console.xul", "_blank");
 
-	function defaultKOPrefs() {
-		return {
+function defaultKOPrefs() {
+	return {
 
 
 			jbdataUserNameDefault:			{	type: 'string',		value: 'justme'},
@@ -82,17 +82,17 @@
 			editEnableMouseZoom:			{	type: 'boolean',	value: prefset.getBooleanPref('editEnableMouseZoom')},
 
 
-				useTabs:					{	type: 'boolean',	value: prefset.getBooleanPref('useTabs')},
-				editElectricBrace:			{	type: 'boolean',	value: prefset.getBooleanPref('editElectricBrace')},
-				showIndentationGuides:		{	type: 'boolean',	value: prefset.getBooleanPref('showIndentationGuides')},
-				indentWidth:				{	type: 'long',		value: prefset.getLongPref('indentWidth')},
-				tabWidth:					{	type: 'long',		value: prefset.getLongPref('tabWidth')},
+			useTabs:					{	type: 'boolean',	value: prefset.getBooleanPref('useTabs')},
+			editElectricBrace:			{	type: 'boolean',	value: prefset.getBooleanPref('editElectricBrace')},
+			showIndentationGuides:		{	type: 'boolean',	value: prefset.getBooleanPref('showIndentationGuides')},
+			indentWidth:				{	type: 'long',		value: prefset.getLongPref('indentWidth')},
+			tabWidth:					{	type: 'long',		value: prefset.getLongPref('tabWidth')},
 
-				enableAutoAbbreviations:	{	type: 'boolean',	value: prefset.getBooleanPref('enableAutoAbbreviations')},
+			enableAutoAbbreviations:	{	type: 'boolean',	value: prefset.getBooleanPref('enableAutoAbbreviations')},
 
-				cleanLineEnds:				{	type: 'boolean',	value: prefset.getBooleanPref('cleanLineEnds')},
-				ensureFinalEOL:				{	type: 'boolean',	value: prefset.getBooleanPref('ensureFinalEOL')},
-				autoSaveSeconds:			{	type: 'long',		value: prefset.getLongPref('autoSaveSeconds')},
+			cleanLineEnds:				{	type: 'boolean',	value: prefset.getBooleanPref('cleanLineEnds')},
+			ensureFinalEOL:				{	type: 'boolean',	value: prefset.getBooleanPref('ensureFinalEOL')},
+			autoSaveSeconds:			{	type: 'long',		value: prefset.getLongPref('autoSaveSeconds')},
 
 //			encodingEnvironment:			{	type: 'boolean',	value: prefset.getBooleanPref('encodingEnvironment')},
 			encodingDefault:				{	type: 'string',		value: prefset.getStringPref('encodingDefault')},
@@ -103,18 +103,45 @@
 		return result;
 	}
 
+//Setting a string preference
+//
+//var pref_name = ko.interpolate.interpolateStrings(["%(ask: Pref name)"]);
+//if (pref_name) {
+//    var pref_value = ko.interpolate.interpolateStrings(["%(ask: Value)"]);
+//    if (pref_value !== null) {
+//        var prefs = Components.classes['@activestate.com/koPrefService;1'].getService(Components.interfaces.koIPrefService).prefs;
+//        //dump("Setting pref '" + pref_name + "' to '" + pref_value + "'\n");
+//        prefs.setStringPref(pref_name, pref_value);
+//    }
+//}
+
+		function setUserData (thePrefs){
+
+			//	Setting a string preference
+
+			 var pref_name = ko.interpolate.interpolateStrings(["%(ask: Pref name)"]);
+			if (pref_name) {
+			     var pref_value = ko.interpolate.interpolateStrings(["%(ask: Value)"]);
+			   if (pref_value !== null) {
+				 var prefs = Components.classes['@activestate.com/koPrefService;1'].getService(Components.interfaces.koIPrefService).prefs;
+				//dump("Setting pref '" + pref_name + "' to '" + pref_value + "'\n");
+				// prefs.setStringPref(pref_name, pref_value);
+				prefset.setStringPref('jbdataUserNameDefault',thePrefs['jbdataUserNameDefault']);	//	jbdataUserNameDefault
+				// prefset.setStringPref('jbdataUserEmailDefault',thePrefs['jbdataUserEmailDefault']);	//	jbdataUserEmailDefault
+			   }
+			}
+		}
 
 
 	function setKOPrefs(thePrefs) {
+
+		// setUserData();
 		var i;
 		var prefs = Components.classes['@activestate.com/koPrefService;1'].getService(Components.interfaces.koIPrefService).prefs;
 		var prefset = prefs.QueryInterface(Components.interfaces.koIPreferenceSet);
 
 	/*	Data User
 		================================================================================================================ */
-			prefset.setStringPref('jbdataUserNameDefault',thePrefs['jbdataUserNameDefault']);	//	jbdataUserNameDefault
-	/*		prefset.setStringPref('jbdataUserEmailDefault',thePrefs['jbdataUserEmailDefault']);	//	jbdataUserEmailDefault
-
 
 	/*	Key Bindings
 		================================================================================================================ */
@@ -122,6 +149,9 @@
 //		ko.keybindings.manager._add_keybinding_sequences({
 //			'cmd_lineDuplicate':	['Meta+E']
 //		});
+
+// Set UserData
+		prefset.setStringPref('jbdataUserNameDefault',thePrefs['jbdataUserNameDefault']);	//	jbdataUserNameDefault
 
 	/*	Appearance
 		================================================================================================================ */
@@ -186,6 +216,7 @@
 				prefset.setStringPref('import_include_matches','');
 
 			}
+	}
 
 	/*	Web & Browser
 		================================================================================================================ */
@@ -198,54 +229,53 @@
 	/*	Languages
 		================================================================================================================ */
 
-		setLanguagePrefs(thePrefs['setSecondary']);
-	}
+		// setLanguagePrefs(thePrefs['setSecondary']);
+//	}
+	//
+	//function getPrimaryLanguages() {
+	//	var Cc=Components.classes,Ci=Components.interfaces;
+	//	var langRegistry=Cc['@activestate.com/koLanguageRegistryService;1'].getService(Ci.koILanguageRegistryService);
+	//	var languages=[];
+	//
+	//	//	Get Languages
+	//		var languageNames = {};
+	//		langRegistry.getLanguageNames(languageNames , {}); // second {} needed to keep xpcom happy
+	//		languageNames = languageNames.value;
+	//
+	//	languageNames.forEach(function(name) {
+	//		var koLanguage = langRegistry.getLanguage(name);
+	//		if(koLanguage.primary) languages.push(name);
+	//	});
+	//	return languages;
+	//}
 
-	function getPrimaryLanguages() {
-		var Cc=Components.classes,Ci=Components.interfaces;
-		var langRegistry=Cc['@activestate.com/koLanguageRegistryService;1'].getService(Ci.koILanguageRegistryService);
-		var languages=[];
 
-		//	Get Languages
-			var languageNames = {};
-			langRegistry.getLanguageNames(languageNames , {}); // second {} needed to keep xpcom happy
-			languageNames = languageNames.value;
-
-		languageNames.forEach(function(name) {
-			var koLanguage = langRegistry.getLanguage(name);
-			if(koLanguage.primary) languages.push(name);
-		});
-		return languages;
-	}
-
-
-	function listPrimaryLanguages() {
-		var primaries = ['HTML','HTML5','CSS','JavaScript','PHP','SQL','MySQL'];
-		var secondaries = ['Apache','Bash','JSON','Komodo Snippet','Less','XML','XSLT'];
-		return [primaries,secondaries];
-	}
+	//function listPrimaryLanguages() {
+	//	var primaries = ['HTML','HTML5','CSS','JavaScript','PHP','SQL','MySQL'];
+	//	var secondaries = ['Apache','Bash','JSON','Komodo Snippet','Less','XML','XSLT'];
+	//	return [primaries,secondaries];
+	//}
 
 
 /*	Language Settings: Set Primary Languages
 	================================================ */
-	function setLanguagePrefs(useSecondary) {
-		//	Get Languages
-
-			var languages=listPrimaryLanguages();
-			var [languages,secondaries]=listPrimaryLanguages();
-				if(useSecondary) languages=languages.concat(secondaries);
-				languages=['Text'].concat(languages);
-
-		//	Get Preferences
-
-			var prefs = Components.classes['@activestate.com/koPrefService;1'].getService(Components.interfaces.koIPrefService).prefs;
-			var prefset = prefs.QueryInterface(Components.interfaces.koIPreferenceSet);
-
-			var Cc=Components.classes,Ci=Components.interfaces;
-			var langRegistry = Cc["@activestate.com/koLanguageRegistryService;1"].getService(Ci.koILanguageRegistryService);
-			var languageNames = {};
-				langRegistry.getLanguageNames(languageNames , {}); // second {} needed to keep xpcom happy
-				languageNames = languageNames.value;
+	//function setLanguagePrefs(useSecondary) {
+	//	//	Get Languages
+	//
+	//		var languages=listPrimaryLanguages();
+	//			if(useSecondary) languages=languages.concat(secondaries);
+	//			languages=['Text'].concat(languages);
+	//
+	//	//	Get Preferences
+	//
+	//		var prefs = Components.classes['@activestate.com/koPrefService;1'].getService(Components.interfaces.koIPrefService).prefs;
+	//		var prefset = prefs.QueryInterface(Components.interfaces.koIPreferenceSet);
+	//
+	//		var Cc=Components.classes,Ci=Components.interfaces;
+	//		var langRegistry = Cc["@activestate.com/koLanguageRegistryService;1"].getService(Ci.koILanguageRegistryService);
+	//		var languageNames = {};
+	//			langRegistry.getLanguageNames(languageNames , {}); // second {} needed to keep xpcom happy
+	//			languageNames = languageNames.value;
 /*
 		//	Get Language Prefs
 
@@ -260,29 +290,29 @@
 			}
 */
 		//	Set Primary Languages
-			var madeChange = false;
-
-			languageNames.forEach(function(name) {
-				var koLanguage = langRegistry.getLanguage(name);
-				var shouldBePrimary = languages.indexOf(name) >= 0;
-				if (koLanguage.primary != shouldBePrimary) {
-					koLanguage.primary = shouldBePrimary;
-					madeChange = true;
-/*
-					var langPrefName = name;
-					var langPref = !langPrefs.hasPref(langPrefName) ? Cc["@activestate.com/koPreferenceSet;1"].createInstance() : langPrefs.getPref(langPrefName);
-
-						langPref.setBooleanPref('primary', shouldBePrimary);
-						if (!langPrefs.hasPref(langPrefName)) langPrefs.setPref(langPrefName, langPref);
-*/
-					prefset.setBooleanPref('languages/%s/primary'.sprintf(name), shouldBePrimary);
-				}
-			});
-
-			if (madeChange) {
-				var obsSvc = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
-				obsSvc.notifyObservers(null, 'primary_languages_changed', '');
-			}
+//			var madeChange = false;
+//
+//			languageNames.forEach(function(name) {
+//				var koLanguage = langRegistry.getLanguage(name);
+//				var shouldBePrimary = languages.indexOf(name) >= 0;
+//				if (koLanguage.primary != shouldBePrimary) {
+//					koLanguage.primary = shouldBePrimary;
+//					madeChange = true;
+///*
+//					var langPrefName = name;
+//					var langPref = !langPrefs.hasPref(langPrefName) ? Cc["@activestate.com/koPreferenceSet;1"].createInstance() : langPrefs.getPref(langPrefName);
+//
+//						langPref.setBooleanPref('primary', shouldBePrimary);
+//						if (!langPrefs.hasPref(langPrefName)) langPrefs.setPref(langPrefName, langPref);
+//*/
+//					prefset.setBooleanPref('languages/%s/primary'.sprintf(name), shouldBePrimary);
+//				}
+//			});
+//
+//			if (madeChange) {
+//				var obsSvc = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
+//				obsSvc.notifyObservers(null, 'primary_languages_changed', '');
+//			}
 
 /*	Language Settings: Other
 	================================================
@@ -293,18 +323,18 @@
 	<boolean id="languages/JavaScript/newBOM">0</boolean>
 	<string id="languages/JavaScript/newEncoding">utf-8</string>
 	================================================ */
-
-		for(i=0;i<languages.length;i++) {
-			language=languages[i];
-
-			prefset.setStringPref('languages/%s/newEncoding'.sprintf(language),'utf-8');
-			prefset.setBooleanPref('languages/%s/newBOM'.sprintf(language),0);
-
-			//if(langPrefs.hasPref(language+'/useTabs'))
-			prefset.setBooleanPref('languages/%s/useTabs'.sprintf(language),1);
-			//if(langPrefs.hasPref('languages/%s/tabWidth'.sprintf(language)+'/')) langPrefs.setLongPref(language+'/tabWidth',4);
-			//else
-			prefset.setLongPref('languages/%s/tabWidth'.sprintf(language),4);
-			prefset.setLongPref('languages/%s/indentWidth'.sprintf(language),4);
-		}
-	}
+		//
+		//for(i=0;i<languages.length;i++) {
+		//	language=languages[i];
+		//
+		//	prefset.setStringPref('languages/%s/newEncoding'.sprintf(language),'utf-8');
+		//	prefset.setBooleanPref('languages/%s/newBOM'.sprintf(language),0);
+		//
+		//	//if(langPrefs.hasPref(language+'/useTabs'))
+		//	prefset.setBooleanPref('languages/%s/useTabs'.sprintf(language),1);
+		//	//if(langPrefs.hasPref('languages/%s/tabWidth'.sprintf(language)+'/')) langPrefs.setLongPref(language+'/tabWidth',4);
+		//	//else
+		//	prefset.setLongPref('languages/%s/tabWidth'.sprintf(language),4);
+		//	prefset.setLongPref('languages/%s/indentWidth'.sprintf(language),4);
+		//}
+//}

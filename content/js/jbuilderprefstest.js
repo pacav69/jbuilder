@@ -151,7 +151,7 @@ function defaultKOPrefs() {
 //		});
 
 // Set UserData
-		prefset.setStringPref('jbdataUserNameDefault',thePrefs['jbdataUserNameDefault']);	//	jbdataUserNameDefault
+		prefset.setStringPref('jbdataUserNameDef',thePrefs['jbdataUserNameDefault']);	//	jbdataUserNameDefault
 
 	/*	Appearance
 		================================================================================================================ */

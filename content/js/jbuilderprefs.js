@@ -23,86 +23,92 @@
 			mruFileSize:					{	type: 'long',		value: 40 },
 //			show_start_page:				{	type: 'boolean',	value: 0 },
 
-			codeintelAutoInsertEndTag:		{	type: 'boolean',	value: 1 },
-
-			showWhitespace:					{	type: 'boolean',	value: 0 },
-			showEOL:						{	type: 'boolean',	value: 0 },
-			showLineNumbers:				{	type: 'boolean',	value: 1 },
-			editShowMinimap:				{	type: 'boolean',	value: 0 },
-			editEnableMouseZoom:			{	type: 'boolean',	value: 1 },
-
-				useTabs:					{	type: 'boolean',	value: 1 },
-				editElectricBrace:			{	type: 'boolean',	value: 1 },
-				showIndentationGuides:		{	type: 'boolean',	value: 1 },
-				indentWidth:				{	type: 'long',		value: 4 },
-				tabWidth:					{	type: 'long',		value: 4 },
-
-				enableAutoAbbreviations:	{	type: 'boolean',	value:  0 },
-
-				cleanLineEnds:				{	type: 'boolean',	value: 1 },
-				ensureFinalEOL:				{	type: 'boolean',	value: 1 },
-				autoSaveSeconds:			{	type: 'long',		value: 0 },
-
-//			encodingEnvironment:			{	type: 'boolean',	value: 0 },
-			encodingDefault:				{	type: 'string',		value: 'utf-8'},
-
-			primaryLanguages:				{	type: 'array',		value: ['HTML','HTML5','CSS','JavaScript','PHP','SQL','MySQL'] },
-			secondaryLanguages:				{	type: 'array',		value: ['Apache','Bash','JSON','Less','XML','XSLT'] },
-
-			browser:						{	type: 'string',		value: '' },
-			browser_preview_method:			{	type: 'string',		value: 'in-tab-other-group' },
+//			codeintelAutoInsertEndTag:		{	type: 'boolean',	value: 1 },
+//
+//			showWhitespace:					{	type: 'boolean',	value: 0 },
+//			showEOL:						{	type: 'boolean',	value: 0 },
+//			showLineNumbers:				{	type: 'boolean',	value: 1 },
+//			editShowMinimap:				{	type: 'boolean',	value: 0 },
+//			editEnableMouseZoom:			{	type: 'boolean',	value: 1 },
+//
+//				useTabs:					{	type: 'boolean',	value: 1 },
+//				editElectricBrace:			{	type: 'boolean',	value: 1 },
+//				showIndentationGuides:		{	type: 'boolean',	value: 1 },
+//				indentWidth:				{	type: 'long',		value: 4 },
+//				tabWidth:					{	type: 'long',		value: 4 },
+//
+//				enableAutoAbbreviations:	{	type: 'boolean',	value:  0 },
+//
+//				cleanLineEnds:				{	type: 'boolean',	value: 1 },
+//				ensureFinalEOL:				{	type: 'boolean',	value: 1 },
+//				autoSaveSeconds:			{	type: 'long',		value: 0 },
+//
+////			encodingEnvironment:			{	type: 'boolean',	value: 0 },
+//			encodingDefault:				{	type: 'string',		value: 'utf-8'},
+//
+//			primaryLanguages:				{	type: 'array',		value: ['HTML','HTML5','CSS','JavaScript','PHP','SQL','MySQL'] },
+//			secondaryLanguages:				{	type: 'array',		value: ['Apache','Bash','JSON','Less','XML','XSLT'] },
+//
+//			browser:						{	type: 'string',		value: '' },
+//			browser_preview_method:			{	type: 'string',		value: 'in-tab-other-group' },
 
 //			showAllFiles:					{	type: 'boolean',	value: 1 },
 		};
 	}
 
 	function getKOPrefs() {
+        
+        
 		var prefs = Components.classes['@activestate.com/koPrefService;1'].getService(Components.interfaces.koIPrefService).prefs;
 		var prefset = prefs.QueryInterface(Components.interfaces.koIPreferenceSet);
 
 //		var langprefs = prefset.getPref('languages');
 		var result = {
 
-			jbdataUserNameDefault:			{	type: 'string',		value: prefset.getStringPref('jbdataUserNameDefault')},
-			jbdataUserEmailDefault:			{	type: 'string',		value: prefset.getStringPref('jbdataUserEmailDefault')},
+//			jbdataUserNameDefault:			{	type: 'string',		value: prefset.getStringPref('jbdataUserNameDefault')},
+//			jbdataUserEmailDefault:			{	type: 'string',		value: prefset.getStringPref('jbdataUserEmailDefault')},
 
 			mruProjectSize:					{	type: 'long',		value: prefset.getLongPref('mruProjectSize') },
 			mruFileSize:					{	type: 'long',		value: prefset.getLongPref('mruFileSize')},
 	//		show_start_page:				{	type: 'boolean',	value: prefset.getBooleanPref('show_start_page')},
 
-			codeintelAutoInsertEndTag:		{	type: 'boolean',	value: prefset.getBooleanPref('codeintelAutoInsertEndTag')},
-
-			showWhitespace:					{	type: 'boolean',	value: prefset.getBooleanPref('showWhitespace')},
-			showEOL:						{	type: 'boolean',	value: prefset.getBooleanPref('showEOL')},
-			showLineNumbers:				{	type: 'boolean',	value: prefset.getBooleanPref('showLineNumbers')},
-			editShowMinimap:				{	type: 'boolean',	value: prefset.getBooleanPref('editShowMinimap')},
-			editEnableMouseZoom:			{	type: 'boolean',	value: prefset.getBooleanPref('editEnableMouseZoom')},
-
-
-				useTabs:					{	type: 'boolean',	value: prefset.getBooleanPref('useTabs')},
-				editElectricBrace:			{	type: 'boolean',	value: prefset.getBooleanPref('editElectricBrace')},
-				showIndentationGuides:		{	type: 'boolean',	value: prefset.getBooleanPref('showIndentationGuides')},
-				indentWidth:				{	type: 'long',		value: prefset.getLongPref('indentWidth')},
-				tabWidth:					{	type: 'long',		value: prefset.getLongPref('tabWidth')},
-
-				enableAutoAbbreviations:	{	type: 'boolean',	value: prefset.getBooleanPref('enableAutoAbbreviations')},
-
-				cleanLineEnds:				{	type: 'boolean',	value: prefset.getBooleanPref('cleanLineEnds')},
-				ensureFinalEOL:				{	type: 'boolean',	value: prefset.getBooleanPref('ensureFinalEOL')},
-				autoSaveSeconds:			{	type: 'long',		value: prefset.getLongPref('autoSaveSeconds')},
-
-//			encodingEnvironment:			{	type: 'boolean',	value: prefset.getBooleanPref('encodingEnvironment')},
-			encodingDefault:				{	type: 'string',		value: prefset.getStringPref('encodingDefault')},
-
-			browser:						{	type: 'string',		value: prefset.getStringPref('browser')},
-			browser_preview_method:			{	type: 'string',		value: prefset.getStringPref('browser_preview_method')},
+//			codeintelAutoInsertEndTag:		{	type: 'boolean',	value: prefset.getBooleanPref('codeintelAutoInsertEndTag')},
+//
+//			showWhitespace:					{	type: 'boolean',	value: prefset.getBooleanPref('showWhitespace')},
+//			showEOL:						{	type: 'boolean',	value: prefset.getBooleanPref('showEOL')},
+//			showLineNumbers:				{	type: 'boolean',	value: prefset.getBooleanPref('showLineNumbers')},
+//			editShowMinimap:				{	type: 'boolean',	value: prefset.getBooleanPref('editShowMinimap')},
+//			editEnableMouseZoom:			{	type: 'boolean',	value: prefset.getBooleanPref('editEnableMouseZoom')},
+//
+//
+//				useTabs:					{	type: 'boolean',	value: prefset.getBooleanPref('useTabs')},
+//				editElectricBrace:			{	type: 'boolean',	value: prefset.getBooleanPref('editElectricBrace')},
+//				showIndentationGuides:		{	type: 'boolean',	value: prefset.getBooleanPref('showIndentationGuides')},
+//				indentWidth:				{	type: 'long',		value: prefset.getLongPref('indentWidth')},
+//				tabWidth:					{	type: 'long',		value: prefset.getLongPref('tabWidth')},
+//
+//				enableAutoAbbreviations:	{	type: 'boolean',	value: prefset.getBooleanPref('enableAutoAbbreviations')},
+//
+//				cleanLineEnds:				{	type: 'boolean',	value: prefset.getBooleanPref('cleanLineEnds')},
+//				ensureFinalEOL:				{	type: 'boolean',	value: prefset.getBooleanPref('ensureFinalEOL')},
+//				autoSaveSeconds:			{	type: 'long',		value: prefset.getLongPref('autoSaveSeconds')},
+//
+////			encodingEnvironment:			{	type: 'boolean',	value: prefset.getBooleanPref('encodingEnvironment')},
+//			encodingDefault:				{	type: 'string',		value: prefset.getStringPref('encodingDefault')},
+//
+//			browser:						{	type: 'string',		value: prefset.getStringPref('browser')},
+//			browser_preview_method:			{	type: 'string',		value: prefset.getStringPref('browser_preview_method')},
 		};
 		return result;
 	}
 
-
+// TODO: code for saving userdata prefs 
 
 	function setKOPrefs(thePrefs) {
+		
+		// TODO: remove before production
+ window.openDialog("chrome://global/content/console.xul", "_blank");
+
 		var i;
 		var prefs = Components.classes['@activestate.com/koPrefService;1'].getService(Components.interfaces.koIPrefService).prefs;
 		var prefset = prefs.QueryInterface(Components.interfaces.koIPreferenceSet);
@@ -115,8 +121,11 @@
 //		});
 	/*	Data User
 		================================================================================================================ */
-			prefset.setStringPref('jbdataUserNameDefault',thePrefs['jbdataUserNameDefault']);	//	jbdataUserNameDefault
-			prefset.setStringPref('jbdataUserEmailDefault',thePrefs['jbdataUserEmailDefault']);	//	jbdataUserEmailDefault
+		prefset.setStringPref('jbdataUserNameDefault',thePrefs['jbdataUserNameDefault']);	//	jbdataUserNameDefault
+		console.log(username=["jbdataUserNameDefault"]);
+
+
+//			prefset.setStringPref('jbdataUserEmailDefault',thePrefs['jbdataUserEmailDefault']);	//	jbdataUserEmailDefault
 
 
 
@@ -125,43 +134,44 @@
 
 		prefset.setLongPref('mruProjectSize',thePrefs['mruProjectSize']);		//	Number of Projects
 		prefset.setLongPref('mruFileSize',thePrefs['mruFileSize']);			//	Number of Files
+		console.log("setmrufilesize", mruFileSize)
 	//	prefset.setBooleanPref('show_start_page',thePrefs['show_start_page']);	//	Hide Start Page
 
 	/*	Code Intelligence
 		================================================================================================================ */
 
-		prefset.setBooleanPref('codeintelAutoInsertEndTag',thePrefs['codeintelAutoInsertEndTag']);	//	HTML End Tags
+//		prefset.setBooleanPref('codeintelAutoInsertEndTag',thePrefs['codeintelAutoInsertEndTag']);	//	HTML End Tags
 
 	/*	Editor (General)
 		================================================================================================================ */
 
-			prefset.setBooleanPref('showWhitespace',thePrefs['showWhitespace']);		//	Show White Space characters
-			prefset.setBooleanPref('showEOL',thePrefs['showEOL']);			//	Show end-of-line characters
-			prefset.setBooleanPref('showLineNumbers',thePrefs['showLineNumbers']);	//	Show line numbers
-			prefset.setBooleanPref('editShowMinimap',thePrefs['editShowMinimap']);	//	Hide MiniMap
-			prefset.setBooleanPref('editEnableMouseZoom',thePrefs['editEnableMouseZoom']);	//	Hide MiniMap
-			prefset.setBooleanPref('codeintelAutoInsertEndTag',thePrefs['codeintelAutoInsertEndTag']);	//	Hide MiniMap
+			//prefset.setBooleanPref('showWhitespace',thePrefs['showWhitespace']);		//	Show White Space characters
+			//prefset.setBooleanPref('showEOL',thePrefs['showEOL']);			//	Show end-of-line characters
+			//prefset.setBooleanPref('showLineNumbers',thePrefs['showLineNumbers']);	//	Show line numbers
+			//prefset.setBooleanPref('editShowMinimap',thePrefs['editShowMinimap']);	//	Hide MiniMap
+			//prefset.setBooleanPref('editEnableMouseZoom',thePrefs['editEnableMouseZoom']);	//	Hide MiniMap
+			//prefset.setBooleanPref('codeintelAutoInsertEndTag',thePrefs['codeintelAutoInsertEndTag']);	//	Hide MiniMap
 
 
 	/*		Indentation
 			============================================================================================================ */
 
-			prefset.setBooleanPref('useTabs',thePrefs['useTabs']);				//	Prefer Tab characters over spaces
-			prefset.setBooleanPref('editElectricBrace',thePrefs['editElectricBrace']);		//	Auto Adjust Closing Brace ?
-			prefset.setBooleanPref('showIndentationGuides',thePrefs['showIndentationGuides']);	//	Indentation Guides
-			prefset.setLongPref('indentWidth',thePrefs['indentWidth']);				//	Number of spaces per indent
-			prefset.setLongPref('tabWidth',thePrefs['tabWidth']);					//	Width of each Tab character
+			//prefset.setBooleanPref('useTabs',thePrefs['useTabs']);				//	Prefer Tab characters over spaces
+			//prefset.setBooleanPref('editElectricBrace',thePrefs['editElectricBrace']);		//	Auto Adjust Closing Brace ?
+			//prefset.setBooleanPref('showIndentationGuides',thePrefs['showIndentationGuides']);	//	Indentation Guides
+			//prefset.setLongPref('indentWidth',thePrefs['indentWidth']);				//	Number of spaces per indent
+			//prefset.setLongPref('tabWidth',thePrefs['tabWidth']);					//	Width of each Tab character
 			//	Per Language Indentation Settings:	See below
 
 	/*		Smart Editing
 			============================================================================================================ */
-			prefset.setBooleanPref('enableAutoAbbreviations',thePrefs['enableAutoAbbreviations']);	//	Disable Auto Abbreviation
+//			prefset.setBooleanPref('enableAutoAbbreviations',thePrefs['enableAutoAbbreviations']);	//	Disable Auto Abbreviation
 
 	/*		Save Options
 			============================================================================================================ */
-			prefset.setBooleanPref('cleanLineEnds',thePrefs['cleanLineEnds']);		//	Clean trailing white space and EOL markers
-			prefset.setBooleanPref('ensureFinalEOL',thePrefs['ensureFinalEOL']);		//	Ensure file ends with EOL marker
-			prefset.setLongPref('autoSaveSeconds',thePrefs['autoSaveSeconds']);		//	Auto-save every  seconds
+			//prefset.setBooleanPref('cleanLineEnds',thePrefs['cleanLineEnds']);		//	Clean trailing white space and EOL markers
+			//prefset.setBooleanPref('ensureFinalEOL',thePrefs['ensureFinalEOL']);		//	Ensure file ends with EOL marker
+			//prefset.setLongPref('autoSaveSeconds',thePrefs['autoSaveSeconds']);		//	Auto-save every  seconds
 
 	/*	Fonts and Colors
 		================================================================================================================ */
@@ -172,17 +182,17 @@
 	/*	Internationization
 		================================================================================================================ */
 //			prefset.setBooleanPref('encodingEnvironment',thePrefs['encodingEnvironment']);	//	Use Encoding Defined in Environment: ?
-			prefset.setStringPref('encodingDefault',thePrefs['encodingDefault']);	//	Encoding
+//			prefset.setStringPref('encodingDefault',thePrefs['encodingDefault']);	//	Encoding
 			//Language-Specific Default Encoding: See Below
 			//Signature (BOM): See Below
 
 	/*	Show All Files
 		============================================================================================================ */
-			if(thePrefs['showAllFiles']) {
-				prefset.setStringPref('import_exclude_matches','');
-				prefset.setStringPref('import_include_matches','');
-
-			}
+			//if(thePrefs['showAllFiles']) {
+			//	prefset.setStringPref('import_exclude_matches','');
+			//	prefset.setStringPref('import_include_matches','');
+			//
+			//}
 
 	/*	Web & Browser
 		================================================================================================================ */
@@ -195,37 +205,37 @@
 	/*	Languages
 		================================================================================================================ */
 
-		setLanguagePrefs(thePrefs['setSecondary']);
+//		setLanguagePrefs(thePrefs['setSecondary']);
 	}
 
-	function getPrimaryLanguages() {
-		var Cc=Components.classes,Ci=Components.interfaces;
-		var langRegistry=Cc['@activestate.com/koLanguageRegistryService;1'].getService(Ci.koILanguageRegistryService);
-		var languages=[];
-
-		//	Get Languages
-			var languageNames = {};
-			langRegistry.getLanguageNames(languageNames , {}); // second {} needed to keep xpcom happy
-			languageNames = languageNames.value;
-
-		languageNames.forEach(function(name) {
-			var koLanguage = langRegistry.getLanguage(name);
-			if(koLanguage.primary) languages.push(name);
-		});
-		return languages;
-	}
-
-
-	function listPrimaryLanguages() {
-		var primaries = ['HTML','HTML5','CSS','JavaScript','PHP','SQL','MySQL'];
-		var secondaries = ['Apache','Bash','JSON','Komodo Snippet','Less','XML','XSLT'];
-		return [primaries,secondaries];
-	}
-
+	//function getPrimaryLanguages() {
+	//	var Cc=Components.classes,Ci=Components.interfaces;
+	//	var langRegistry=Cc['@activestate.com/koLanguageRegistryService;1'].getService(Ci.koILanguageRegistryService);
+	//	var languages=[];
+	//
+	//	//	Get Languages
+	//		var languageNames = {};
+	//		langRegistry.getLanguageNames(languageNames , {}); // second {} needed to keep xpcom happy
+	//		languageNames = languageNames.value;
+	//
+	//	languageNames.forEach(function(name) {
+	//		var koLanguage = langRegistry.getLanguage(name);
+	//		if(koLanguage.primary) languages.push(name);
+	//	});
+	//	return languages;
+	//}
+	//
+	//
+	//function listPrimaryLanguages() {
+	//	var primaries = ['HTML','HTML5','CSS','JavaScript','PHP','SQL','MySQL'];
+	//	var secondaries = ['Apache','Bash','JSON','Komodo Snippet','Less','XML','XSLT'];
+	//	return [primaries,secondaries];
+	//}
+	//
 
 /*	Language Settings: Set Primary Languages
 	================================================ */
-	function setLanguagePrefs(useSecondary) {
+/*	function setLanguagePrefs(useSecondary) {
 		//	Get Languages
 
 			var languages=listPrimaryLanguages();
@@ -244,6 +254,7 @@
 				langRegistry.getLanguageNames(languageNames , {}); // second {} needed to keep xpcom happy
 				languageNames = languageNames.value;
 /*
+/*
 		//	Get Language Prefs
 
 			var langPrefs;
@@ -257,14 +268,14 @@
 			}
 */
 		//	Set Primary Languages
-			var madeChange = false;
-
-			languageNames.forEach(function(name) {
-				var koLanguage = langRegistry.getLanguage(name);
-				var shouldBePrimary = languages.indexOf(name) >= 0;
-				if (koLanguage.primary != shouldBePrimary) {
-					koLanguage.primary = shouldBePrimary;
-					madeChange = true;
+			//var madeChange = false;
+			//
+			//languageNames.forEach(function(name) {
+			//	var koLanguage = langRegistry.getLanguage(name);
+			//	var shouldBePrimary = languages.indexOf(name) >= 0;
+			//	if (koLanguage.primary != shouldBePrimary) {
+			//		koLanguage.primary = shouldBePrimary;
+			//		madeChange = true;
 /*
 					var langPrefName = name;
 					var langPref = !langPrefs.hasPref(langPrefName) ? Cc["@activestate.com/koPreferenceSet;1"].createInstance() : langPrefs.getPref(langPrefName);
@@ -272,14 +283,14 @@
 						langPref.setBooleanPref('primary', shouldBePrimary);
 						if (!langPrefs.hasPref(langPrefName)) langPrefs.setPref(langPrefName, langPref);
 */
-					prefset.setBooleanPref('languages/%s/primary'.sprintf(name), shouldBePrimary);
-				}
-			});
-
-			if (madeChange) {
-				var obsSvc = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
-				obsSvc.notifyObservers(null, 'primary_languages_changed', '');
-			}
+			//		prefset.setBooleanPref('languages/%s/primary'.sprintf(name), shouldBePrimary);
+			//	}
+			//});
+			//
+			//if (madeChange) {
+			//	var obsSvc = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
+			//	obsSvc.notifyObservers(null, 'primary_languages_changed', '');
+			//}
 
 /*	Language Settings: Other
 	================================================
@@ -290,18 +301,18 @@
 	<boolean id="languages/JavaScript/newBOM">0</boolean>
 	<string id="languages/JavaScript/newEncoding">utf-8</string>
 	================================================ */
-
-		for(i=0;i<languages.length;i++) {
-			language=languages[i];
-
-			prefset.setStringPref('languages/%s/newEncoding'.sprintf(language),'utf-8');
-			prefset.setBooleanPref('languages/%s/newBOM'.sprintf(language),0);
-
-			//if(langPrefs.hasPref(language+'/useTabs'))
-			prefset.setBooleanPref('languages/%s/useTabs'.sprintf(language),1);
-			//if(langPrefs.hasPref('languages/%s/tabWidth'.sprintf(language)+'/')) langPrefs.setLongPref(language+'/tabWidth',4);
-			//else
-			prefset.setLongPref('languages/%s/tabWidth'.sprintf(language),4);
-			prefset.setLongPref('languages/%s/indentWidth'.sprintf(language),4);
-		}
-	}
+	//
+	//	for(i=0;i<languages.length;i++) {
+	//		language=languages[i];
+	//
+	//		prefset.setStringPref('languages/%s/newEncoding'.sprintf(language),'utf-8');
+	//		prefset.setBooleanPref('languages/%s/newBOM'.sprintf(language),0);
+	//
+	//		//if(langPrefs.hasPref(language+'/useTabs'))
+	//		prefset.setBooleanPref('languages/%s/useTabs'.sprintf(language),1);
+	//		//if(langPrefs.hasPref('languages/%s/tabWidth'.sprintf(language)+'/')) langPrefs.setLongPref(language+'/tabWidth',4);
+	//		//else
+	//		prefset.setLongPref('languages/%s/tabWidth'.sprintf(language),4);
+	//		prefset.setLongPref('languages/%s/indentWidth'.sprintf(language),4);
+	//	}
+	//}

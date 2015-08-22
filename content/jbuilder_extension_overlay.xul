@@ -6,17 +6,20 @@
          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-	<script type="application/x-javascript" src="chrome://xtk/content/xtk.js" />
-	<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/library.js" />
+	<script src="chrome://xtk/content/xtk.js" type="application/x-javascript" />
+<!--	<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/library.js" />
 	<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/fileutilities.js" />
-	<!--<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/htmltools.js" />-->
+-->	<!--<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/htmltools.js" />-->
 	<!--<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/cssp.js" />-->
 	<!--<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/htmltemplate.js" />-->
-	<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/jbuilderprefs.js" />
-	<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/koprefs.js" />
+<!--	<script src="chrome://jbuilder_extension/content/js/jbuilderprefs.js" type="application/x-javascript"/>-->
+<script src="chrome://jbuilder_extension/content/js/start.js" type="application/x-javascript"/>
 
+<!--	<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/koprefs.js" />
+-->
 <!--	<script type="application/x-javascript" src="chrome://jbuilder_extension/content/beautify/js/beautify.js" />-->
-	<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/main.js" />
+<!--	<script src="chrome://jbuilder_extension/content/js/main.js" type="application/javascript"/>-->
+
 
 <!-- <menu id is a unique name -->
 
@@ -24,17 +27,12 @@
 		<menu id="jbtools" label="JTools" insertafter="helpMenu">
 			<menupopup>
 				<menuitem id="info" label="About Joomla Tools …"
-						  oncommand="window.openDialog('chrome://jbuilder_extension/content/info/info.xul','Info','chrome,centerscreen,modal');"
-					class="menuitem-iconic" image="chrome://jbuilder_extension/skin/images/icon-information.png"/>
-
-				<!--menuitem name must match name in main.js function doit(event) switch-->
-				<menuseparator />
-				<menuitem id="koprefs" label="KoPrefs Setup" oncommand="doit(event);"
-					class="menuitem-iconic" image="chrome://jbuilder_extension/skin/images/icon-preferences.png"/>
+						oncommand="window.openDialog('chrome://jbuilder_extension/content/info/info.xul','Info','chrome,centerscreen,modal');"
+                        class="menuitem-iconic" image="chrome://jbuilder_extension/skin/images/icon-information.png"/>
 				<!--menuitem name must match name in main.js function doit(event) switch-->
 				<menuseparator />
 				<menuitem id="jbuilderprefs" label="JBulder Setup" oncommand="doit(event);"
-					class="menuitem-iconic" image="chrome://jbuilder_extension/skin/images/icon-preferences.png"/>
+                        class="menuitem-iconic" image="chrome://jbuilder_extension/skin/images/icon-preferences.png"/>
 
 			</menupopup>
 		</menu>

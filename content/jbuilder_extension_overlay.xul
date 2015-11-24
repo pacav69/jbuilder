@@ -6,14 +6,14 @@
          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-	<script src="chrome://xtk/content/xtk.js" type="application/x-javascript" />
-<!--	<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/library.js" />
+<!--	<script src="chrome://xtk/content/xtk.js" type="application/x-javascript" />
+--><!--	<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/library.js" />
 	<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/fileutilities.js" />
 -->	<!--<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/htmltools.js" />-->
 	<!--<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/cssp.js" />-->
 	<!--<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/htmltemplate.js" />-->
 <!--	<script src="chrome://jbuilder_extension/content/js/jbuilderprefs.js" type="application/x-javascript"/>-->
-<script src="chrome://jbuilder_extension/content/js/start.js" type="application/x-javascript"/>
+<script src="chrome://jbuilder_extension/content/js/startup.js" type="application/x-javascript"/>
 
 <!--	<script type="application/x-javascript" src="chrome://jbuilder_extension/content/js/koprefs.js" />
 -->

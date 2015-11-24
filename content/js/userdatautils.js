@@ -108,22 +108,22 @@ function initprefs() {
 
 	}
 
-	function initMoreprefs() {
-		//	Dummy Stub for below
-	}
-    
- this.refresh = function() {
-    try {
-      if (ko.views.manager.currentView &&
-          ko.views.manager.currentView.koDoc &&
-          ko.views.manager.currentView.koDoc.buffer) {
-        
-          var t = document.getElementById('!JBUILDER_tab');
-          if (!t || !t.parentNode.selectedItem ||
-              t.parentNode.selectedItem.id != '!JBUILDER_tab' ||
-              t.parentNode.parentNode.parentNode.collapsed) return;
-        }
-        !JBUILDER.reloadSource();
-      } else !JBUILDER.init();
-    } catch (e) { xtk2.debug.exceptionHandler(e, NAME); }
-  };
+//	function initMoreprefs() {
+//		//	Dummy Stub for below
+//	}
+//    
+// this.refresh = function() {
+//    try {
+//      if (ko.views.manager.currentView &&
+//          ko.views.manager.currentView.koDoc &&
+//          ko.views.manager.currentView.koDoc.buffer) {
+//        
+//          var t = document.getElementById('!JBUILDER_tab');
+//          if (!t || !t.parentNode.selectedItem ||
+//              t.parentNode.selectedItem.id != '!JBUILDER_tab' ||
+//              t.parentNode.parentNode.parentNode.collapsed) return;
+//        }
+//        !JBUILDER.reloadSource();
+//      } else !JBUILDER.init();
+//    } catch (e) { xtk2.debug.exceptionHandler(e, NAME); }
+//  };

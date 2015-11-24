@@ -3,6 +3,7 @@
 <?xml-stylesheet href="chrome://komodo/skin/global/global.css" type="text/css"?>
 <?xml-stylesheet href="chrome://jbuilder_extension/content/css/dialog.css" type="text/css" ?>
 <script src="chrome://xtk2/contentt/xtk2.js" type="application/x-javascript"/>
+<script src="chrome://jbuilder_extension/content/js/userdatautils.js" type="application/x-javascript"
 
 <dialog
     id="dialog-prefs"
@@ -18,6 +19,15 @@
 	onload="initprefs();"
 	>
 <hbox>
+	<groupbox>
+		<caption label="Look at prefs"/>
+		<box>
+			<label control="jbdataUserNameDefault" width='96'>currentPrefs</label>
+			<textbox id='jbdataUserNameDefault' width="96em"/>
+			
+				
+		</box>
+	</groupbox>
 	<groupbox>
 		<groupbox>
 			<caption label="Appearance" />
@@ -35,7 +45,7 @@
 			<caption label="Jbuilder Defaults" />
 			<box>
 				<label control='jbdataUserNameDefault' width='96'>Default User Name</label>
-				<textbox id='jbdataUserNameDefault' width="48"/>
+				<textbox id='jbdataUserNameDefault' width="96em"/>
 			</box>
 		</groupbox>
 	</groupbox>	

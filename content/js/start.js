@@ -60,7 +60,7 @@ if (typeof ko.extensions.JBUILDER === 'undefined') ko.extensions.JBUILDER = { ve
   var main = this,
       JBUILDER = null,
       JBUILDERBox = null,
-      JBUILDERView = null,
+      JBUILDERView = null
 	  
   /**
    * Displays a node info in a tooltip if set
@@ -75,7 +75,6 @@ if (typeof ko.extensions.JBUILDER === 'undefined') ko.extensions.JBUILDER = { ve
   //  } catch (e) { xtk2.debug.exceptionHandler(e, NAME); }
   //};
   //
-
   /**
    * Extension settings module
    */
@@ -83,13 +82,13 @@ if (typeof ko.extensions.JBUILDER === 'undefined') ko.extensions.JBUILDER = { ve
     /**
      * Initial settings (if none set)
      */
-    defaults : {
-      left : false,
-      locate : true,
-      expand : true,
-      sort : false,
-      HTMLfilter : false
-    },
+    //defaults : {
+    //  left : false,
+    //  locate : true,
+    //  expand : true,
+    //  sort : false,
+    //  HTMLfilter : false
+    //},
     /**
      * Switches toolbar icon to a new state
      * @param {string} id XUL id
@@ -150,6 +149,8 @@ if (typeof ko.extensions.JBUILDER === 'undefined') ko.extensions.JBUILDER = { ve
     init : function() {
       for (var p in this.defaults) {
         if (!xtk2.services.prefs.prefs.hasBooleanPref('extensions.JBUILDER.' + p))
+			this.set(p, this.defaults[p]);
+		if (!xtk2.services.prefs.prefs.hasStringPref('extensions.JBUILDER.' + p))
           this.set(p, this.defaults[p]);
       }
     }
@@ -161,20 +162,20 @@ if (typeof ko.extensions.JBUILDER === 'undefined') ko.extensions.JBUILDER = { ve
     try {
       main.settings.init(); // this loads defaults if ran for the first time
       //main.settings.updateIcons(); // now it's done here
-      JBUILDER = new JBUILDERClass();
-      xtk2.events.bind(
-        ['current_view_changed',
-         'current_project_changed',
-         'current_view_language_changed',
-         'file_changed'],
-        main.refresh
-      );
-      xtk2.events.view_closed(function(event) {
-        // if no more views - this removes the last source from the tree
-        if (!ko.views.manager._viewCount) self.refresh();
-      });
-      if (main.settings.get('locate')) main.setAutoLocate(true);
-      main.refresh();
+      //JBUILDER = new JBUILDERClass();
+      //xtk2.events.bind(
+      //  ['current_view_changed',
+      //   'current_project_changed',
+      //   'current_view_language_changed',
+      //   'file_changed'],
+      //  main.refresh
+      //);
+      //xtk2.events.view_closed(function(event) {
+      //  // if no more views - this removes the last source from the tree
+      //  if (!ko.views.manager._viewCount) self.refresh();
+      //});
+//      if (main.settings.get('locate')) main.setAutoLocate(true);
+//      main.refresh();
     } catch(e) { xtk2.debug.exceptionHandler(e, NAME); }
   };
   window.setTimeout(main.load, 1000, false);

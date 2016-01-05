@@ -1,0 +1,12 @@
+
+
+
+
+
+
+content jbuilder_extension jar:jbuilder_extension.jar!/content/
+skin jbuilder_extension classic/1.0 jar:jbuilder_extension.jar!/skin/
+locale jbuilder_extension en-US jar:jbuilder_extension.jar!/locale/en-US/
+
+
+overlay chrome://komodo/content/komodo.xul chrome://jbuilder_extension/content/jbuilder_extension_overlay.xul
